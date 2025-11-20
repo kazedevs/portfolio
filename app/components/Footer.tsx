@@ -13,7 +13,7 @@ export default function Footer() {
           <div>
             Email:{" "}
             <Link
-              href="mailto:kazed4@protonmail.com"
+              href="mailto:kazed4v@proton.me"
               className="hover:text-white transition-colors"
             >
               kazed4v@protonmail.com

@@ -11,7 +11,7 @@ const socials = [
   },
   {
     label: "Email",
-    href: "mailto:kazed4@protonmail.com",
+    href: "mailto:kazed4v@proton.me",
     icon: <FaEnvelope />,
   },
   {

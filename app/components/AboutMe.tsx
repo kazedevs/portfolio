@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FaGithub, FaEnvelope } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import TechStack from "./TechStack";
+import * as motion from "framer-motion/client";
 
 const socials = [
   {
@@ -24,7 +25,13 @@ const socials = [
 export default function AboutMe() {
   return (
     <div className="text-foreground space-y-6 sm:space-y-8">
-      <div className="flex flex-col items-center w-full gap-6 md:gap-8 md:flex-row md:items-start md:justify-between">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col items-center w-full gap-6 md:gap-8 md:flex-row md:items-start md:justify-between"
+      >
         {/* Profile Picture - Centered on mobile, right side on desktop */}
         <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 shrink-0 md:ml-auto order-first md:order-last relative">
           <Image
@@ -59,9 +66,15 @@ export default function AboutMe() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      <div className="pl-1 sm:pl-2">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="pl-1 sm:pl-2"
+      >
         <div className="flex items-center space-x-2 text-[#ff4400]">
           <span className="text-xl sm:text-2xl font-bold font-mono">&gt;</span>
           <h2 className="text-xl sm:text-3xl font-medium tracking-wide text-foreground">
@@ -81,7 +94,7 @@ export default function AboutMe() {
         </p>
         <div className="my-12 border-t border-border w-full"></div>
         <TechStack />
-      </div>
+      </motion.div>
     </div>
   );
 }

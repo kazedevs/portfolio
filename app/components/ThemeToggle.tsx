@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { FaMoon, FaSun } from "react-icons/fa";
+import { Moon, Sun } from "lucide-react";
 
 export default function ThemeToggle() {
     const { theme, setTheme, resolvedTheme } = useTheme();
@@ -30,7 +30,7 @@ export default function ThemeToggle() {
             className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-background border border-border shadow-lg text-foreground hover:bg-foreground/5 transition-colors cursor-pointer"
             aria-label="Toggle theme"
         >
-            {resolvedTheme === "dark" ? <FaSun size={20} /> : <FaMoon size={20} />}
+            {resolvedTheme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
         </button>
     );
 }

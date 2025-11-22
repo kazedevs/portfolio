@@ -31,6 +31,9 @@ h4 {
 body {
   color: var(--foreground);
   background: var(--background);
+  background-image: radial-gradient(var(--pattern-fg) 1px,
+      transparent 1px);
+  background-size: 24px 24px;
   font-family: var(--font-open-sans), -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 0.875rem;

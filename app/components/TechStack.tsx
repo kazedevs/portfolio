@@ -11,6 +11,7 @@ import {
   SiRedis,
 } from "react-icons/si";
 import { TbBrandTypescript, TbBrandNextjs } from "react-icons/tb";
+import * as motion from "framer-motion/client";
 
 const techStack = [
   {
@@ -88,22 +89,32 @@ const techStack = [
 export default function TechStack() {
   return (
     <div className="mt-12">
-      <div className="flex items-center space-x-2 text-[#ff4400] mb-6">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="flex items-center space-x-2 text-[#ff4400] mb-6"
+      >
         <span className="text-xl sm:text-2xl font-bold font-mono">&gt;</span>
         <h2 className="text-xl sm:text-3xl font-medium tracking-wide text-foreground">
           stack i use
         </h2>
-      </div>
+      </motion.div>
       <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
         {techStack.map((tech, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: index * 0.05 }}
             className={`flex flex-col items-center justify-center p-4 rounded-lg bg-foreground/5 hover:bg-foreground/10 transition-all duration-300 ${tech.color} cursor-default`}
             title={tech.name}
           >
             {tech.icon}
             <span className="mt-2 text-sm text-foreground/80">{tech.name}</span>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

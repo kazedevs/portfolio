@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import { fetchGitHubContributions } from "../actions";
 
 interface ContributionDay {
   contributionCount: number;
@@ -29,41 +30,9 @@ export default function GitHubContributions() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchContributions = async () => {
+    const loadContributions = async () => {
       try {
-        const response = await fetch("https://api.github.com/graphql", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
-          },
-          body: JSON.stringify({
-            query: `
-              query($userName: String!) {
-                user(login: $userName) {
-                  contributionsCollection {
-                    contributionCalendar {
-                      weeks {
-                        contributionDays {
-                          contributionCount
-                          date
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            variables: { userName: "kazedevs" },
-          }),
-        });
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch GitHub contributions");
-        }
-
-        const data: GitHubResponse = await response.json();
-        const allWeeks = data.data.user.contributionsCollection.contributionCalendar.weeks;
+        const allWeeks = await fetchGitHubContributions("kazedevs");
         setWeeks(allWeeks.slice(-20));
       } catch (err) {
         setError("Failed to load contributions");
@@ -72,7 +41,7 @@ export default function GitHubContributions() {
       }
     };
 
-    fetchContributions();
+    loadContributions();
   }, []);
 
   const getColor = (count: number): string => {

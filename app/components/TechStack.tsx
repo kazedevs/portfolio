@@ -1,5 +1,5 @@
 import { DiJavascript } from "react-icons/di";
-import { FaReact, FaNodeJs, FaPython, FaDocker, FaJava} from "react-icons/fa";
+import { FaReact, FaNodeJs, FaPython, FaDocker, FaJava } from "react-icons/fa";
 import { FaGolang } from "react-icons/fa6";
 import {
   SiTypescript,
@@ -20,7 +20,7 @@ const techStack = [
   },
   {
     name: "JavaScript",
-    icon: <DiJavascript className="w-8 h-8"/>,
+    icon: <DiJavascript className="w-8 h-8" />,
     color: "hover:text-yellow-500"
   },
   {
@@ -36,7 +36,7 @@ const techStack = [
   {
     name: "Next.js",
     icon: <TbBrandNextjs className="w-8 h-8" />,
-    color: "hover:text-white",
+    color: "hover:text-foreground",
   },
   {
     name: "Node.js",
@@ -66,7 +66,7 @@ const techStack = [
   {
     name: "Vercel",
     icon: <SiVercel className="w-8 h-8" />,
-    color: "hover:text-white",
+    color: "hover:text-foreground",
   },
   {
     name: "Tailwind",
@@ -90,7 +90,7 @@ export default function TechStack() {
     <div className="mt-12">
       <div className="flex items-center space-x-2 text-[#ff4400] mb-6">
         <span className="text-xl sm:text-2xl font-bold font-mono">&gt;</span>
-        <h2 className="text-xl sm:text-3xl font-medium tracking-wide text-white">
+        <h2 className="text-xl sm:text-3xl font-medium tracking-wide text-foreground">
           stack i use
         </h2>
       </div>
@@ -98,11 +98,11 @@ export default function TechStack() {
         {techStack.map((tech, index) => (
           <div
             key={index}
-            className={`flex flex-col items-center justify-center p-4 rounded-lg bg-white/5 hover:bg-white/10 transition-all duration-300 ${tech.color} cursor-default`}
+            className={`flex flex-col items-center justify-center p-4 rounded-lg bg-foreground/5 hover:bg-foreground/10 transition-all duration-300 ${tech.color} cursor-default`}
             title={tech.name}
           >
             {tech.icon}
-            <span className="mt-2 text-sm text-white/80">{tech.name}</span>
+            <span className="mt-2 text-sm text-foreground/80">{tech.name}</span>
           </div>
         ))}
       </div>

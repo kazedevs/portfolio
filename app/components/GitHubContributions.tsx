@@ -76,18 +76,18 @@ export default function GitHubContributions() {
   }, []);
 
   const getColor = (count: number): string => {
-    if (count === 0) return "rgba(255, 255, 255, 0.05)";
+    if (count === 0) return "var(--pattern-fg)";
     const intensity = Math.min(Math.ceil(count / 2), 4);
     return `hsl(142, 76%, ${90 - intensity * 20}%)`;
   };
 
-  if (loading) return <div className="py-4 text-sm text-gray-400">Loading...</div>;
+  if (loading) return <div className="py-4 text-sm text-foreground/60">Loading...</div>;
   if (error) return <div className="py-4 text-sm text-red-400">{error}</div>;
 
   return (
     <div className="mt-8">
-      <div className="text-sm text-gray-400 mb-3">GitHub Activity</div>
-      
+      <div className="text-sm text-foreground/60 mb-3">GitHub Activity</div>
+
       <div className="grid grid-flow-col grid-rows-7 gap-1">
         {weeks.flatMap((week, weekIndex) =>
           week.contributionDays.map((day, dayIndex) => (
@@ -101,7 +101,7 @@ export default function GitHubContributions() {
         )}
       </div>
 
-      <div className="flex items-center justify-end mt-2 text-xs text-gray-400">
+      <div className="flex items-center justify-end mt-2 text-xs text-foreground/60">
         <span className="mr-2">Less</span>
         {[0, 1, 2, 3, 4].map((level) => (
           <div

@@ -2,10 +2,10 @@ import { FaGithub } from "react-icons/fa";
 
 export default function Projects() {
   return (
-    <div className="text-white space-y-6">
+    <div className="text-foreground space-y-6">
       <div className="flex items-center space-x-2 text-[#ff4400]">
         <span className="text-xl sm:text-2xl font-bold font-mono">&gt;</span>
-        <h2 className="text-2xl sm:text-3xl font-medium tracking-wide text-white">
+        <h2 className="text-2xl sm:text-3xl font-medium tracking-wide text-foreground">
           projects
         </h2>
       </div>
@@ -18,12 +18,12 @@ export default function Projects() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="project-one github"
-              className="ml-2 hover:opacity-80"
+              className="ml-2 hover:opacity-80 text-foreground"
             >
               <FaGithub size={20} />
             </a>
           </div>
-          <p className="text-white/60 text-sm">
+          <p className="text-foreground/60 text-sm">
             A secure and user-friendly web application that allows users to
             easily upload and share files with others.
           </p>
@@ -36,7 +36,7 @@ export default function Projects() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="project-two github"
-              className="ml-2 hover:opacity-80"
+              className="ml-2 hover:opacity-80 text-foreground"
             >
               <FaGithub size={20} />
             </a>
@@ -54,7 +54,7 @@ export default function Projects() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="project-three github"
-              className="ml-2 hover:opacity-80"
+              className="ml-2 hover:opacity-80 text-foreground"
             >
               <FaGithub size={20} />
             </a>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Open_Sans } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
+import ThemeToggle from "./components/ThemeToggle";
 
 const instrumentSerif = Instrument_Serif({
   weight: "400",
@@ -36,13 +38,17 @@ export default function RootLayout({
       className="overflow-x-hidden"
     >
       <body
-        className={`${instrumentSerif.variable} ${openSans.variable} antialiased bg-[#0b0b10] text-white overflow-x-hidden`}
+        className={`${instrumentSerif.variable} ${openSans.variable} antialiased bg-background text-foreground overflow-x-hidden transition-colors duration-300`}
+        suppressHydrationWarning
       >
-        <div className="relative min-h-screen w-screen overflow-x-hidden">
-          <div className="w-full">
-            <div className="mx-auto w-full">{children}</div>
+        <Providers>
+          <div className="relative min-h-screen w-screen overflow-x-hidden">
+            <div className="w-full">
+              <div className="mx-auto w-full">{children}</div>
+            </div>
+            <ThemeToggle />
           </div>
-        </div>
+        </Providers>
       </body>
     </html>
   );

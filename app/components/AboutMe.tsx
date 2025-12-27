@@ -24,7 +24,7 @@ const socials = [
 
 export default function AboutMe() {
   return (
-    <div className="text-foreground space-y-4 sm:space-y-5 -mt-2">
+    <div className="text-foreground space-y-4 sm:space-y-5">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function AboutMe() {
         transition={{ duration: 0.5 }}
         className="flex flex-row items-center w-full gap-4 sm:gap-6"
       >
-        <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 shrink-0 relative">
+        <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 shrink-0 relative">
           <Image
             src="/profile.jpeg"
             alt="Raj"
@@ -45,8 +45,8 @@ export default function AboutMe() {
 
         {/* Text Content - Right side with tight spacing */}
          <div className="flex flex-col items-start justify-center -space-y-1">
-          <div className="flex flex-wrap items-center gap-8 mb-0">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold text-foreground leading-none">
+          <div className="flex flex-wrap items-center gap-3 mb-0">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground leading-none">
               Hi, I'm Raj
             </h1>
             <div className="flex items-center gap-1 px-2 py-0.5 rounded-[8px] border border-green-500/30 bg-green-500/10 text-green-500 text-[9px] sm:text-[10px] font-bold">

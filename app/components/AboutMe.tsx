@@ -24,41 +24,45 @@ const socials = [
 
 export default function AboutMe() {
   return (
-    <div className="text-foreground space-y-6 sm:space-y-8">
+    <div className="text-foreground space-y-4 sm:space-y-5 -mt-2">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="flex flex-col items-center w-full gap-6 md:gap-8 md:flex-row md:items-start md:justify-between"
+        className="flex flex-row items-center w-full gap-4 sm:gap-6"
       >
-        {/* Profile Picture - Centered on mobile, right side on desktop */}
-        <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 shrink-0 md:ml-auto order-first md:order-last relative">
+        <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 shrink-0 relative">
           <Image
             src="/profile.jpeg"
             alt="Raj"
-            width={200}
-            height={200}
-            className="object-cover w-full h-full rounded-full border-2 border-border hover:scale-110 transition-transform duration-500"
+            width={144}
+            height={144}
+            className="object-cover w-full h-full rounded-2xl border-2 border-border hover:scale-105 transition-transform duration-500"
             priority
           />
         </div>
 
-        {/* Text Content - Below profile on mobile, left side on desktop */}
-        <div className="flex flex-col items-center md:items-start -space-y-2 text-center md:text-left order-last md:order-first">
-          <h1 className="text-4xl sm:text-5xl font-semibold leading-none">
-            Hi, I'm Raj
-          </h1>
-          <p className="font-medium opacity-60 text-base -mt-1">@kazedevs</p>
-          <p className="text-lg text-foreground/80 font-medium -mt-1 text-center">
-            19 · engineer · building
-          </p>
-          <div className="flex items-center justify-center md:justify-start gap-4 pt-2 w-full">
+        {/* Text Content - Right side with tight spacing */}
+         <div className="flex flex-col items-start justify-center -space-y-1">
+          <div className="flex flex-wrap items-center gap-8 mb-0">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-sans font-bold text-foreground leading-none">
+              Hi, I'm Raj
+            </h1>
+            <div className="flex items-center gap-1 px-2 py-0.5 rounded-[8px] border border-green-500/30 bg-green-500/10 text-green-500 text-[9px] sm:text-[10px] font-bold">
+              <span className="w-1 h-1 rounded-full bg-green-500 animate-pulse"></span>
+              Available for work
+            </div>
+          </div>
+          
+          <p className="text-sm sm:text-base font-semibold opacity-90 leading-tight mt-0">Developer @19</p>
+
+          <div className="flex items-center gap-2 mt-1">
             {socials.map((social) => (
               <a
                 key={social.label}
                 href={social.href}
-                className="w-10 h-10 rounded-full border border-border flex items-center justify-center text-sm font-medium text-foreground/80 hover:bg-foreground/5 transition"
+                className="w-7 h-7 rounded-lg border border-border flex items-center justify-center text-sm text-foreground/80 hover:bg-foreground/5 hover:border-foreground/30 transition-all"
                 aria-label={social.label}
               >
                 {social.icon}
@@ -73,26 +77,23 @@ export default function AboutMe() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="pl-1 sm:pl-2"
+        className="pl-0.5"
       >
         <div className="flex items-center space-x-2 text-[#ff4400]">
-          <span className="text-xl sm:text-2xl font-bold font-mono">&gt;</span>
-          <h2 className="text-xl sm:text-3xl font-medium tracking-wide text-foreground">
+          <h2 className="text-base sm:text-xl font-medium tracking-wide text-foreground">
             about me
           </h2>
         </div>
-        <p className="text-lg sm:text-xl font-medium tracking-wide text-foreground mt-6">
+        <p className="text-sm sm:text-base font-normal tracking-wide text-foreground/90 mt-2 leading-relaxed">
           A CS mind without the academic cage — I learn by doing, shipping, and
           burning through problems.
           <br />
-          <br />
           Right now I'm playing in the worlds of web dev, backend systems, and
           whatever math I need to bend things my way.
-        </p>
-        <p className="text-lg sm:text-xl font-medium tracking-wide text-foreground mt-6">
+          <br />
           currently building something cool for the dev community
         </p>
-        <div className="my-12 border-t border-border w-full"></div>
+        <div className="my-6 border-t border-border w-full"></div>
         <TechStack />
       </motion.div>
     </div>

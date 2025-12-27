@@ -1,119 +1,74 @@
-import { DiJavascript } from "react-icons/di";
-import { FaReact, FaNodeJs, FaPython, FaDocker, FaJava } from "react-icons/fa";
-import { FaGolang } from "react-icons/fa6";
 import {
   SiTypescript,
+  SiJavascript,
+  SiReact,
+  SiNodedotjs,
+  SiPython,
+  SiGo,
   SiNextdotjs,
+  SiDocker,
+  SiOpenjdk,
   SiTailwindcss,
   SiPostgresql,
   SiMongodb,
   SiVercel,
   SiRedis,
+  SiShadcnui,
+  SiFramer,
+  SiExpress,
+  SiPrisma,
+  SiPostman,
+  SiGit,
+  SiGithub,
+  SiLinux,
 } from "react-icons/si";
-import { TbBrandTypescript, TbBrandNextjs } from "react-icons/tb";
+import { Boxes } from "lucide-react";
 import * as motion from "framer-motion/client";
 
 const techStack = [
-  {
-    name: "TypeScript",
-    icon: <TbBrandTypescript className="w-8 h-8" />,
-    color: "hover:text-blue-500",
-  },
-  {
-    name: "JavaScript",
-    icon: <DiJavascript className="w-8 h-8" />,
-    color: "hover:text-yellow-500"
-  },
-  {
-    name: "React",
-    icon: <FaReact className="w-8 h-8" />,
-    color: "hover:text-cyan-400",
-  },
-  {
-    name: "Go",
-    icon: <FaGolang className="w-8 h-8" />,
-    color: "hover:text-blue-400",
-  },
-  {
-    name: "Next.js",
-    icon: <TbBrandNextjs className="w-8 h-8" />,
-    color: "hover:text-foreground",
-  },
-  {
-    name: "Node.js",
-    icon: <FaNodeJs className="w-8 h-8" />,
-    color: "hover:text-green-500",
-  },
-  {
-    name: "Python",
-    icon: <FaPython className="w-8 h-8" />,
-    color: "hover:text-yellow-400",
-  },
-  {
-    name: "Java",
-    icon: <FaJava className="w-8 h-8" />,
-    color: "hover:text-yellow-400",
-  },
-  {
-    name: "Docker",
-    icon: <FaDocker className="w-8 h-8" />,
-    color: "hover:text-blue-400",
-  },
-  {
-    name: "Redis",
-    icon: <SiRedis className="w-8 h-8" />,
-    color: "hover:text-red-600",
-  },
-  {
-    name: "Vercel",
-    icon: <SiVercel className="w-8 h-8" />,
-    color: "hover:text-foreground",
-  },
-  {
-    name: "Tailwind",
-    icon: <SiTailwindcss className="w-8 h-8" />,
-    color: "hover:text-cyan-300",
-  },
-  {
-    name: "PostgreSQL",
-    icon: <SiPostgresql className="w-8 h-8" />,
-    color: "hover:text-blue-700",
-  },
-  {
-    name: "MongoDB",
-    icon: <SiMongodb className="w-8 h-8" />,
-    color: "hover:text-green-600",
-  },
+  { name: "ReactJs", icon: <SiReact /> },
+  { name: "NextJs", icon: <SiNextdotjs /> },
+  { name: "JavaScript", icon: <SiJavascript /> },
+  { name: "TypeScript", icon: <SiTypescript /> },
+  { name: "Tailwind", icon: <SiTailwindcss /> },
+  { name: "Go", icon: <SiGo /> },
+  { name: "Zustand", icon: <Boxes className="w-full h-full" /> },
+  { name: "Shadcn", icon: <SiShadcnui /> },
+  { name: "Motion", icon: <SiFramer /> },
+  { name: "NodeJS", icon: <SiNodedotjs /> },
+  { name: "ExpressJS", icon: <SiExpress /> },
+  { name: "PostgreSQL", icon: <SiPostgresql /> },
+  { name: "MongoDB", icon: <SiMongodb /> },
+  { name: "Redis", icon: <SiRedis /> },
+  { name: "Prisma", icon: <SiPrisma /> },
+  { name: "Postman", icon: <SiPostman /> },
+  { name: "Git", icon: <SiGit /> },
+  { name: "GitHub", icon: <SiGithub /> },
+  { name: "Python", icon: <SiPython /> },
+  { name: "Java", icon: <SiOpenjdk /> },
+  { name: "Docker", icon: <SiDocker /> },
+  { name: "Linux", icon: <SiLinux /> },
+  { name: "Vercel", icon: <SiVercel /> },
 ];
 
 export default function TechStack() {
   return (
-    <div className="mt-12">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="flex items-center space-x-2 text-[#ff4400] mb-6"
-      >
-        <span className="text-xl sm:text-2xl font-bold font-mono">&gt;</span>
-        <h2 className="text-xl sm:text-3xl font-medium tracking-wide text-foreground">
-          stack i use
-        </h2>
-      </motion.div>
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6">
+    <div className="mt-4">
+      <div className="flex flex-wrap gap-2 sm:gap-3">
         {techStack.map((tech, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: index * 0.05 }}
-            className={`flex flex-col items-center justify-center p-4 rounded-lg bg-foreground/5 hover:bg-foreground/10 transition-all duration-300 ${tech.color} cursor-default`}
+            transition={{ duration: 0.3, delay: index * 0.02 }}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-foreground/[0.03] border border-border/40 text-foreground/70 cursor-default hover:bg-foreground/[0.05] hover:border-border/80 transition-all duration-300"
             title={tech.name}
           >
-            {tech.icon}
-            <span className="mt-2 text-sm text-foreground/80">{tech.name}</span>
+            <div className="w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center">
+              {tech.icon}
+            </div>
+            <span className="text-xs sm:text-sm font-medium">{tech.name}</span>
           </motion.div>
         ))}
       </div>

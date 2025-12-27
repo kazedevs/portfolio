@@ -1,9 +1,10 @@
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FiArrowUpRight } from "react-icons/fi";
 import * as motion from "framer-motion/client";
 
 export default function Projects() {
   return (
-    <div className="text-foreground space-y-6">
+    <div className="text-foreground space-y-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -11,12 +12,11 @@ export default function Projects() {
         transition={{ duration: 0.5 }}
         className="flex items-center space-x-2 text-[#ff4400]"
       >
-        <span className="text-xl sm:text-2xl font-bold font-mono">&gt;</span>
-        <h2 className="text-2xl sm:text-3xl font-medium tracking-wide text-foreground">
+        <h2 className="text-lg sm:text-2xl font-medium tracking-wide text-foreground">
           projects
         </h2>
       </motion.div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {[
             {
               title: "ResumeIQ",
@@ -46,7 +46,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group relative flex flex-col overflow-hidden rounded-xl bg-muted/40 border border-white/5 hover:border-white/10 transition-colors"
+              className="group relative flex flex-col overflow-hidden rounded-lg bg-muted/40 border border-white/5 hover:border-white/10 transition-colors"
             >
               <div className="relative aspect-video overflow-hidden">
                 <img
@@ -57,35 +57,35 @@ export default function Projects() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               
-              <div className="flex flex-col flex-1 p-5 space-y-3">
+              <div className="flex flex-col flex-1 p-3.5 space-y-2">
                 <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-semibold tracking-tight text-foreground">
+                  <h3 className="text-base font-semibold tracking-tight text-foreground">
                     {project.title}
                   </h3>
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-2.5">
                     <a
                       href={project.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-[#ff4400] transition-colors"
+                      className="text-muted-foreground"
                       aria-label={`${project.title} github`}
                     >
-                      <FaGithub size={20} />
+                      <FaGithub size={16} />
                     </a>
                     {project.live && (
                       <a
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-[#ff4400] transition-colors"
+                        className="text-muted-foreground"
                         aria-label={`${project.title} live demo`}
                       >
-                        <FaExternalLinkAlt size={18} />
+                        <FiArrowUpRight size={18} />
                       </a>
                     )}
                   </div>
                 </div>
-                <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
+                <p className="text-muted-foreground text-[13px] leading-relaxed line-clamp-3">
                   {project.desc}
                 </p>
               </div>

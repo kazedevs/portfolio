@@ -54,6 +54,11 @@ const techStack = [
 export default function TechStack() {
   return (
     <div className="mt-4">
+      <div className="flex items-center space-x-2 text-[#ff4400]">
+        <h2 className="text-base sm:text-xl font-medium tracking-wide text-foreground">
+          tech stack.
+        </h2>
+      </div>
       <div className="flex flex-wrap gap-2 sm:gap-3">
         {techStack.map((tech, index) => (
           <motion.div

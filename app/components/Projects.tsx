@@ -13,7 +13,7 @@ export default function Projects() {
         className="flex items-center space-x-2 text-[#ff4400]"
       >
         <h2 className="text-lg sm:text-2xl font-medium tracking-wide text-foreground">
-          projects
+          projects.
         </h2>
       </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

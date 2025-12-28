@@ -1,4 +1,5 @@
 import AboutMe from "./components/AboutMe";
+import Education from "./components/Education";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import GitHubContributions from "./components/GitHubContributions";
@@ -13,6 +14,8 @@ export default function Home() {
             <LocalTime />
           </div>
           <AboutMe />
+          <div className="my-6 border-t border-border w-full"></div>
+          <Education />
           <div className="my-6 border-t border-border w-full"></div>
 
           <div id="proof-of-work" className="mb-8">

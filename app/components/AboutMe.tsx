@@ -51,11 +51,11 @@ export default function AboutMe() {
             </h1>
             <div className="flex items-center gap-1 px-2 py-0.5 rounded-[8px] border border-green-500/30 bg-green-500/10 text-green-500 text-[9px] sm:text-[10px] font-bold">
               <span className="w-1 h-1 rounded-full bg-green-500 animate-pulse"></span>
-              Available for work
+              Available
             </div>
           </div>
           
-          <p className="text-sm sm:text-base font-semibold opacity-90 leading-tight mt-0">Developer @19</p>
+          <p className="text-sm sm:text-base font-semibold opacity-90 leading-tight mt-0">Full Stack Developer</p>
 
           <div className="flex items-center gap-2 mt-1">
             {socials.map((social) => (
@@ -81,7 +81,7 @@ export default function AboutMe() {
       >
         <div className="flex items-center space-x-2 text-[#ff4400]">
           <h2 className="text-base sm:text-xl font-medium tracking-wide text-foreground">
-            about me
+            about me.
           </h2>
         </div>
         <p className="text-sm sm:text-base font-normal tracking-wide text-foreground/90 mt-2 leading-relaxed">

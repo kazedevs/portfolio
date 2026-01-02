@@ -30,18 +30,22 @@ export default function GitHubContributions() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const loadContributions = async () => {
-      try {
-        const allWeeks = await fetchGitHubContributions("kazedevs");
-        setWeeks(allWeeks.slice(-20));
-      } catch (err) {
-        setError("Failed to load contributions");
-      } finally {
-        setLoading(false);
-      }
-    };
+    const timer = setTimeout(() => {
+      const loadContributions = async () => {
+        try {
+          const allWeeks = await fetchGitHubContributions("kazedevs");
+          setWeeks(allWeeks.slice(-20));
+        } catch (err) {
+          setError("Failed to load contributions");
+        } finally {
+          setLoading(false);
+        }
+      };
 
-    loadContributions();
+      loadContributions();
+    }, 100); // Small delay to let page render first
+
+    return () => clearTimeout(timer);
   }, []);
 
   const getColor = (count: number): string => {
@@ -50,7 +54,7 @@ export default function GitHubContributions() {
     return `hsl(142, 76%, ${90 - intensity * 20}%)`;
   };
 
-  if (loading) return <div className="py-4 text-sm text-foreground/60">Loading...</div>;
+  if (loading) return <div className="py-4 text-sm text-foreground/60">Loading contributions...</div>;
   if (error) return <div className="py-4 text-sm text-red-400">{error}</div>;
 
   return (

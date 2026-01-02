@@ -67,7 +67,7 @@ export default function TechStack() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: index * 0.02 }}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-foreground/[0.03] border border-border/40 text-foreground/70 cursor-default hover:bg-foreground/[0.05] hover:border-border/80 transition-all duration-300"
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-foreground/3 border border-border/40 text-foreground/70 cursor-default hover:bg-foreground/5 hover:border-border/80 transition-all duration-300"
             title={tech.name}
           >
             <div className="w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center">

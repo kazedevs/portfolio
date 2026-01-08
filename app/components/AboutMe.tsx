@@ -20,6 +20,11 @@ const socials = [
     href: "https://x.com/kazedevs",
     icon: <FaXTwitter />,
   },
+  {
+    label: "Resume",
+    href: "/resume.pdf",
+    icon: <FaEnvelope />,
+  },
 ];
 
 export default function AboutMe() {
@@ -44,7 +49,7 @@ export default function AboutMe() {
         </div>
 
         {/* Text Content - Right side with tight spacing */}
-         <div className="flex flex-col items-start justify-center -space-y-1">
+        <div className="flex flex-col items-start justify-center -space-y-1">
           <div className="flex flex-wrap items-center gap-3 mb-0">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-foreground leading-none">
               Hi, I'm Raj
@@ -54,8 +59,10 @@ export default function AboutMe() {
               Available
             </div>
           </div>
-          
-          <p className="text-sm sm:text-base font-semibold opacity-90 leading-tight mt-0">Full Stack Developer</p>
+
+          <p className="text-sm sm:text-base font-semibold opacity-90 leading-tight mt-0">
+            Full Stack Developer
+          </p>
 
           <div className="flex items-center gap-2 mt-1">
             {socials.map((social) => (
@@ -64,6 +71,7 @@ export default function AboutMe() {
                 href={social.href}
                 className="w-7 h-7 rounded-lg border border-border flex items-center justify-center text-sm text-foreground/80 hover:bg-foreground/5 hover:border-foreground/30 transition-all"
                 aria-label={social.label}
+                target={social.label === "Resume" ? "_blank" : undefined}
               >
                 {social.icon}
               </a>

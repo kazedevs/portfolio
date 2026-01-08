@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaGithub, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaEnvelope, FaBook } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import TechStack from "./TechStack";
 import * as motion from "framer-motion/client";
@@ -23,7 +23,7 @@ const socials = [
   {
     label: "Resume",
     href: "/resume.pdf",
-    icon: <FaEnvelope />,
+    icon: <FaBook />,
   },
 ];
 

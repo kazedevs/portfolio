@@ -6,7 +6,7 @@ import Image from "next/image";
 // Import images statically for automatic LQIP (blur placeholder) generation
 import resumeiqImg from "@/public/Projects/resumeiq.png";
 import ghostlinkImg from "@/public/Projects/ghostlink.png";
-import yttoolboxImg from "@/public/Projects/yttoolbox.png";
+import buglogImg from "@/public/Projects/buglog.png";
 
 export default function Projects() {
   const projects = [
@@ -25,11 +25,11 @@ export default function Projects() {
       image: ghostlinkImg,
     },
     {
-      title: "YtToolBox",
-      href: "https://github.com/kazedevs/yttoolbox",
-      live: "https://yttoolbox.com",
-      desc: "YtToolBox is a free browser-based toolkit that lets you download YouTube thumbnails, titles, comments, channel images, and audio, plus other quick creator utilities.",
-      image: yttoolboxImg,
+      title: "BugLog",
+      href: "https://github.com/kazedevs/BugLog",
+      live: "https://bug-log.vercel.app",
+      desc: "A production-grade issue tracking application for creating, managing, and organizing issues with a clean, scalable architecture",
+      image: buglogImg,
     },
   ];
 

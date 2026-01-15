@@ -17,7 +17,7 @@ const socials = [
   },
   {
     label: "X",
-    href: "https://x.com/kazedevs",
+    href: "https://x.com/fiynraj",
     icon: <FaXTwitter />,
   },
   {

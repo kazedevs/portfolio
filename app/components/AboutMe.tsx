@@ -12,7 +12,7 @@ const socials = [
   },
   {
     label: "Email",
-    href: "mailto:kazed4v@proton.me",
+    href: "mailto:rajkdbusiness@gmail.com",
     icon: <FaEnvelope />,
   },
   {

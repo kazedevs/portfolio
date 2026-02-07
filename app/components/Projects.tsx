@@ -4,6 +4,7 @@ import * as motion from "framer-motion/client";
 import Image from "next/image";
 
 // Import images statically for automatic LQIP (blur placeholder) generation
+import ossbrowserImg from "@/public/Projects/ossbrowser.png";
 import resumeiqImg from "@/public/Projects/resumeiq.png";
 import ghostlinkImg from "@/public/Projects/ghostlink.png";
 import buglogImg from "@/public/Projects/buglog.png";
@@ -11,12 +12,19 @@ import buglogImg from "@/public/Projects/buglog.png";
 export default function Projects() {
   const projects = [
     {
+      title: "OSSBrowser",
+      href: "https://github.com/kazedevs/OSSBrowser",
+      live: "https://ossbrowser.vercel.app/",
+      desc: "OSSBrowser is a directory for discovering open-source GitHub projects without digging through GitHub. Browse, filter, and jump straight into contributing.",
+      image: ossbrowserImg,
+    },
+    {
       title: "ResumeIQ",
       href: "https://github.com/kazedevs/ResumeIQ",
       live: "https://resume-iq-nine.vercel.app/",
       desc: "ResumeIQ is an AI-powered Resume Analyzer you can create job listings, upload candidate resumes, and use AI to automatically evaluate and match resumes to job requirements.",
       image: resumeiqImg,
-    },
+    }
     {
       title: "GhostLink",
       href: "https://github.com/kazedevs/GhostLink",

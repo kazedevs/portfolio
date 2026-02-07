@@ -13,21 +13,21 @@ export default function Footer() {
           <div>
             Email:{" "}
             <Link
-              href="mailto:kazed4v@proton.me"
+              href="mailto:rajkdbusiness@gmail.com"
               className="hover:text-foreground transition-colors"
             >
-              kazed4v@protonmail.com
+              rajkdbusiness@gmail.com
             </Link>
           </div>
           <div>
             X:{" "}
             <Link
-              href="https://x.com/kazedevs"
+              href="https://x.com/fiynraj"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-foreground transition-colors"
             >
-              @kazedevs
+              @fiynraj
             </Link>
           </div>
           <div className="mb-8">📍 Location: India</div>

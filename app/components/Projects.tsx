@@ -24,7 +24,7 @@ export default function Projects() {
       live: "https://resume-iq-nine.vercel.app/",
       desc: "ResumeIQ is an AI-powered Resume Analyzer you can create job listings, upload candidate resumes, and use AI to automatically evaluate and match resumes to job requirements.",
       image: resumeiqImg,
-    }
+    },
     {
       title: "GhostLink",
       href: "https://github.com/kazedevs/GhostLink",
